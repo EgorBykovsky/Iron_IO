@@ -30,7 +30,7 @@ const PlayersListItem: React.FC<Props> = ({player,deletePlayer}) => {
                 return <TurboSvg/>
             }
         }
-    },[player]);
+    },[]);
 
     return (
         <div className='playerContainer' key={player.id}>

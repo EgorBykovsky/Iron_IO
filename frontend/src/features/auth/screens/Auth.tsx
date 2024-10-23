@@ -70,8 +70,7 @@ const Auth = () => {
                     rules={{
                         validate: {
                             isNotBlank: v => v && v.trim() !== "" || "Enter nickname",
-                            minLength: v => v.trim().length >= 2 || "Min length 2",
-                            maxLength: v => v.trim().length <=10 || "Max length 10"
+                            length: v => v.trim().length >= 2 || "Min length 2"
                         }
                     }}
                 />

@@ -34,10 +34,8 @@ const WinModal = forwardRef((props,ref) => {
                     borderRadius: "30px"
                 }
             }}
-            onClose={() => {
+            onClose={(event,reason) => {
                 setIsOpen(false);
-            }}
-            onBlur={() => {
                 setTimeout(() => {
                     setWinner(null);
                 },500);

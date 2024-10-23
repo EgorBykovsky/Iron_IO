@@ -11,7 +11,7 @@
 .cloud1 { 
     position: fixed;
     width: 105%;
-    height: 18%;
+    height: 9vw;
     background-size: cover;
     top: 0;
     background-image: url("../../assets/cloud1.png");
@@ -21,7 +21,7 @@
 .cloud2{
     position: fixed;
     width: 105%;
-    height: 16%;
+    height: 9vw;
     background-size: cover;
     bottom: 0;
     background-image: url("../../assets/cloud2.png");
@@ -37,3 +37,9 @@
     50% {transform: scale(1.1); } 
   }
   
+
+  @media (max-width: 800px) {
+    .cloud1,.cloud2 {
+      height: 12vw;
+    }
+  }

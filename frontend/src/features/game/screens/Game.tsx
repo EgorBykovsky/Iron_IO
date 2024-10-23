@@ -37,11 +37,10 @@ const Game = () => {
             let messages: Array<Message> = [];
             let players: Array<Player> = [];
 
-            socket.current = new WebSocket(`ws://172.17.136.202:8000/ws/chat/${gameId}/`);
+            socket.current = new WebSocket(`ws://localhost:8000/ws/chat/${gameId}/`);
             socket.current.onclose = () => {
                 showMessage("Connection reset");
                 dispatch(setPage(Page.AUTH));
-
             };
 
             socket.current.onmessage = ({data}) => {
@@ -53,7 +52,7 @@ const Game = () => {
                 } else if (messageType === MessageType.MESSAGE) {
                     chatRef.current.addMessage(props.message, props.profile);
                     messages.push(props);
-                    if (role === UserRole.CREATOR && (props.message?.toLowerCase() === word.current?.toLowerCase())) {
+                    if (role === UserRole.CREATOR && props.message === word.current) {
                         socket.current.send(encryptJSON({
                             messageType: MessageType.WIN,
                             profile: props.profile,

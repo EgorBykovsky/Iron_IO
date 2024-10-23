@@ -64,9 +64,7 @@ const SessionKeyModal = forwardRef(({updateProfileData}: Props, ref) => {
             className="session-key-modal" 
             >
                 <DialogTitle id="session-key-modal-title" className="session-key-modal-title">
-                    <h3>
                     Enter session key
-                    </h3>                                        
                 </DialogTitle>
                 <DialogContent className="session-key-modal-content">
                     <form onSubmit={onSubmit}>
