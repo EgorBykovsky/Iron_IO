@@ -1,0 +1,39 @@
+.layout {
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../../assets/backImage.png");
+    background-size: 100% 100%;
+    background-attachment: fixed;
+}
+.cloud1 { 
+    position: fixed;
+    width: 105%;
+    height: 18%;
+    background-size: cover;
+    top: 0;
+    background-image: url("../../assets/cloud1.png");
+    will-change: transform;
+}
+
+.cloud2{
+    position: fixed;
+    width: 105%;
+    height: 16%;
+    background-size: cover;
+    bottom: 0;
+    background-image: url("../../assets/cloud2.png");
+    will-change: transform;
+  }
+
+.cloud1, .cloud2{
+    animation: moveBackground 3s linear infinite;    
+  }
+
+  @keyframes moveBackground {
+    0%, 100% { transform: scale(1); }
+    50% {transform: scale(1.1); } 
+  }
+  
