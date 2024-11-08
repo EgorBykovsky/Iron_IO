@@ -37,13 +37,18 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'users',
-    'session',
-    'rest_framework',
+    'django.contrib.staticfiles',       
     'channels',
     'chat',     
 ]
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': ':memory:',  
+    }
+}
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -79,16 +84,6 @@ WSGI_APPLICATION = 'iron_io.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'iron',
-        'USER': 'postgres',
-        'PASSWORD': 'egr12620',
-        'HOST': 'pgdb',
-        'PORT': '5432',
-    }
-}
 
 
 # Password validation
@@ -138,7 +133,7 @@ CHANNEL_LAYERS = {
     'default': {
         'BACKEND': 'channels_redis.core.RedisChannelLayer',
         'CONFIG': {
-           'hosts': [('redis', 6379)],
+           'hosts': [('redis1', 6379)],
         },
     },
 }
